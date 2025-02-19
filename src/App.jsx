@@ -6,7 +6,7 @@ function App() {
 
   return (
     <main style={{
-      backgroundImage: `url(${background})`}} className='h-[100dvh] w-[100dvw] bg-no-repeat bg-cover'>
+      backgroundImage: `url(${background})`}} className='h-[100dvh] w-[100dvw] bg-no-repeat bg-cover grid place-items-center'>
 
         <Calculator/>
       
