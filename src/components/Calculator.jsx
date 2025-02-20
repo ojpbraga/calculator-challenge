@@ -11,7 +11,7 @@ function Calculator() {
     }, [value]);
 
   return (
-    <div className='bg-black/65 h-92 w-60 rounded-xl drop-shadow-2xl flex flex-col justify-between overflow-hidden'>
+    <div className='bg-black/65 h-92 w-60 rounded-xl drop-shadow-2xl flex flex-col justify-between overflow-hidden p-2'>
         <Header/>
         <Display value={value}/>
         <Keyboard value={value} setValue={setValue}/>

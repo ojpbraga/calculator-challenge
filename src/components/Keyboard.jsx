@@ -9,7 +9,7 @@ function Keyboard({value, setValue}) {
     }
 
   return (
-    <div className='w-full h-[65%] flex gap-1 p-2'>
+    <div className='w-full h-[65%] flex gap-1'>
 
         <div className='grid grid-cols-3 gap-1 flex-1 items-center'>
             {
