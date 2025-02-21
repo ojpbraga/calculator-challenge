@@ -49,15 +49,15 @@ function Keyboard({value, setValue, setIsCalculate, isCalculate, handleClear}) {
     <div className='w-full h-[65%] flex gap-1'>
 
         <div className='grid grid-cols-3 gap-1 flex-1 items-center'>
-            <div onClick={handleClear} className='grid place-items-center w-full h-full bg-white/65 rounded-full font-semibold cursor-pointer'>AC</div>
-            <div className='grid place-items-center w-full h-full bg-white/65 rounded-full font-semibold cursor-not-allowed'>±</div>
-            <div className='grid place-items-center w-full h-full bg-white/65 rounded-full font-semibold cursor-not-allowed'>%</div>
+            <div onClick={handleClear} className='grid place-items-center w-full h-full bg-[#d4d4d2] rounded-full font-semibold cursor-pointer text-black'>AC</div>
+            <div className='grid place-items-center w-full h-full bg-[#d4d4d2] rounded-full font-semibold cursor-not-allowed text-black'>±</div>
+            <div className='grid place-items-center w-full h-full bg-[#d4d4d2] rounded-full font-semibold cursor-not-allowed text-black'>%</div>
             
             {
                 buttonsNumbers.map(button => button !== '0' ?
-                    <button onClick={handleClick} className='grid place-items-center w-full h-full bg-white/65 rounded-full font-semibold cursor-pointer' value={button} key={`button_${button}`}>{button}</button>
+                    <button onClick={handleClick} className='grid place-items-center w-full h-full bg-[#505050] rounded-full font-semibold cursor-pointer text-[#ccc5ba]' value={button} key={`button_${button}`}>{button}</button>
                     :
-                    <button onClick={handleClick} className='grid place-items-center w-full h-full bg-white/65 rounded-full font-semibold cursor-pointer col-span-3' value={button} key={`button_${button}`}>{button}</button>
+                    <button onClick={handleClick} className='grid place-items-center w-full h-full bg-[#505050] rounded-full font-semibold cursor-pointer col-span-3 text-[#ccc5ba]' value={button} key={`button_${button}`}>{button}</button>
                 )
             }
         </div>
@@ -65,7 +65,7 @@ function Keyboard({value, setValue, setIsCalculate, isCalculate, handleClear}) {
         <div className='h-full w-[23%] grid items-center gap-1'>
             {
                 buttonsMath.map(({value, element}) => (
-                    <button onClick={handleClick} className='grid place-items-center w-full h-full  rounded-full font-bold bg-amber-300 cursor-pointer' key={value}value={value}>{element}</button>
+                    <button onClick={handleClick} className='grid place-items-center w-full h-full  rounded-full font-bold bg-[#ff9500] cursor-pointer text-[#efefef]' key={value}value={value}>{element}</button>
                 ))
             }
             
