@@ -1,21 +1,7 @@
 import React from 'react'
 
 function Keyboard({value, setValue, setIsCalculate, isCalculate, handleClear}) {
-    const buttonsNumbers = [
-        { value: 'AC', element: 'AC' },
-        { value: 'AC', element: 'AC' },
-        { value: 'AC', element: 'AC' },
-        { value: '1', element: '1' },
-        { value: '2', element: '2' },
-        { value: '3', element: '3' },
-        { value: '4', element: '4' },
-        { value: '5', element: '5' },
-        { value: '6', element: '6' },
-        { value: '7', element: '7' },
-        { value: '8', element: '8' },
-        { value: '9', element: '9' },
-        { value: '0', element: '0' }
-    ];
+    const buttonsNumbers = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0'];
     
     const buttonsMath = [
         {value:'/', element: '/'},
@@ -38,7 +24,7 @@ function Keyboard({value, setValue, setIsCalculate, isCalculate, handleClear}) {
 
     // Verificação dos valores
     function verifyValue(valueButton, elementButton) {
-        
+        if (isCalculate) handleClear()
         if(methodsMath.includes(valueButton) && value[0] === undefined) {
             return false;
 
@@ -59,9 +45,13 @@ function Keyboard({value, setValue, setIsCalculate, isCalculate, handleClear}) {
     <div className='w-full h-[65%] flex gap-1'>
 
         <div className='grid grid-cols-3 gap-1 flex-1 items-center'>
+            <div onClick={handleClear} className='grid place-items-center w-full h-full bg-white/65 rounded-full font-semibold cursor-pointer'>AC</div>
+            <div className='grid place-items-center w-full h-full bg-white/65 rounded-full font-semibold cursor-not-allowed'>±</div>
+            <div className='grid place-items-center w-full h-full bg-white/65 rounded-full font-semibold cursor-not-allowed'>%</div>
+            
             {
-                buttonsNumbers.map(({value, element}) => (
-                    <button onClick={handleClick} className='grid place-items-center w-full h-full bg-white/65 rounded-full font-semibold cursor-pointer' value={value} key={value}>{element}</button>
+                buttonsNumbers.map(button => (
+                    <button onClick={handleClick} className='grid place-items-center w-full h-full bg-white/65 rounded-full font-semibold cursor-pointer' value={button} key={`button_${button}`}>{button}</button>
                 ))
             }
         </div>

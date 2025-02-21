@@ -13,10 +13,11 @@ function Calculator() {
     
     useEffect(() => {
         if(isCalculate){
+            // Utiliza o JS para realizar a conta
             let result = eval(value.join(''));
-            // setValue([]);
-            // setValue([...value, result]);
-            setValue(result);
+            // Permite que seja possível realizar calculos com o resultado
+            result = result.toString();
+            setValue([result]);
             setIsCalculate(false);
         };
     }, [isCalculate]);
