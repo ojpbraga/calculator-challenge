@@ -54,9 +54,11 @@ function Keyboard({value, setValue, setIsCalculate, isCalculate, handleClear}) {
             <div className='grid place-items-center w-full h-full bg-white/65 rounded-full font-semibold cursor-not-allowed'>%</div>
             
             {
-                buttonsNumbers.map(button => (
+                buttonsNumbers.map(button => button !== '0' ?
                     <button onClick={handleClick} className='grid place-items-center w-full h-full bg-white/65 rounded-full font-semibold cursor-pointer' value={button} key={`button_${button}`}>{button}</button>
-                ))
+                    :
+                    <button onClick={handleClick} className='grid place-items-center w-full h-full bg-white/65 rounded-full font-semibold cursor-pointer col-span-3' value={button} key={`button_${button}`}>{button}</button>
+                )
             }
         </div>
 
